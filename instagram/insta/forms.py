@@ -1,7 +1,7 @@
 from pyexpat import model
 from django import forms
 from .models import Post
-  
+ 
 
 class postForm(forms.ModelForm):
  
@@ -9,5 +9,6 @@ class postForm(forms.ModelForm):
         model=Post
         fields=[
             'image',
-            'Caption',
+            'caption',
         ]
+ 
