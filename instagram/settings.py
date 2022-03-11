@@ -18,6 +18,7 @@ from decouple import config,Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SECRET_KEY='django-insecure-n9r*3a!e*s_y-36$2v5&(oy-x^ri@qiuce!6-ux@u4_d_njwcr'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -44,8 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    'insta',
-    'users',
+    'insta.apps.InstaConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -93,7 +94,9 @@ if config('MODE')=="dev":
            'NAME': config('DB_NAME'),
            'USER': config('DB_USER'),
            'HOST': config('DB_HOST'),
+           'PASSWORD': config('DB_PASSWORD'),
            'PORT': '',
+           
        }
        
    }
